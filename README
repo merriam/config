@@ -1,0 +1,9 @@
+This is a collection of configuration scripts for bash on Linux.  
+
+I use it to keep handy aliases, history handling, git sources, etc. in one place.  This allows me to work across machines quickly.
+
+Typically, I will symlink the affected files to a subdirectory, e.g., 
+   ~$ git clone http://github.com/merriam/config.git linux_config
+   ~$ rm .bashrc; ln -s linux_config/.bashrc .
+   and so on for each config file.
+

@@ -24,6 +24,10 @@ shopt -s cmdhist
 HISTSIZE=5000
 HISTFILESIZE=10000
 
+# Some handy history aliases
+alias h='history 15'
+alias hh='history | grep -i $*'
+alias hr='history -c; history -r'
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.

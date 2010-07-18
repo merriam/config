@@ -1,5 +1,5 @@
 cd ~
-ln -sf config_linux .bashrc
-ln -sf config_linux .gitconfig
-ln -sf config_linux .gitignore
-ln -sf config_linux .profile
+rm .bashrc; ln -s config_linux/.bashrc .
+rm .gitconfig; ln -s config_linux/.gitconfig .
+rm .gitignore; ln -s config_linux/.gitignore .
+rm .profile; ln -s config_linux/.profile .

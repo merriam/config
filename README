@@ -7,3 +7,6 @@ Typically, I will symlink the affected files to a subdirectory, e.g.,
    ~$ rm .bashrc; ln -s linux_config/.bashrc .
    and so on for each config file.
 
+   I also have the make_links.sh file that does these commands for me in a hurry.
+
+

@@ -1,3 +1,5 @@
 [user]
 	name = Charles Merriam
 	email = charles.merriam@gmail.com
+[push]
+	default = matching

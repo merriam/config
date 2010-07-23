@@ -1,0 +1,9 @@
+alias via="vi /etc/apache2/apache2.conf; apache2ctl -t"
+alias x="echo 'as root';cd /home/chasm/p/s/;source go;killall -q apache2; sleep 1; ps -elf | grep apache | grep -v grep; cd ~/p/s/logs; rm -f ~/p/s/logs/*; apache2ctl -X"
+alias tmob="curl http://mob > ~/p/s/logs/curl; cat_files ~/p/s/logs/* | less"
+alias l="cd ~/p/s/logs; cat_files * | less"
+alias rmlogs="rm -rf /home/chasm/p/s/logs/*"
+alias w="cd /srv/www"
+
+# Old version of Linux doesn't do git prompt.
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\](\!)\$ '

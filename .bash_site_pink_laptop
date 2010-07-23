@@ -3,7 +3,7 @@ alias s="cd /home/chasm/p/s/swoopme"
 alias via="vi /home/chasm/p/s/puppet/manifests/apache2.conf; apache2ctl -t"
 alias g="cd /home/chasm/p/s;source go"
 alias x="echo 'as root';cd /home/chasm/p/s/;source go;killall -q apache2; sleep 1; ps -elf | grep apache | grep -v grep; cd ~/p/s/logs; rm -f ~/p/s/logs/*; apache2ctl -X"
-alias test="curl http://mob > ~/p/s/logs/curl; cat_files ~/p/s/logs/* | less"
+alias tmob="curl http://mob > ~/p/s/logs/curl; cat_files ~/p/s/logs/* | less"
 alias l="cd ~/p/s/logs; cat_files * | less"
 # Annoyingly, bash aliases take no parameters and need functions
 

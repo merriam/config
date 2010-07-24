@@ -3,3 +3,5 @@
 	email = charles.merriam@gmail.com
 [push]
 	default = matching
+[core]
+	excludesfile = /home/chasm/.gitignore

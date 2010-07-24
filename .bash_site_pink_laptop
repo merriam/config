@@ -6,5 +6,6 @@ alias x="echo 'as root';cd /home/chasm/p/s/;source go;killall -q apache2; sleep 
 alias tmob="curl http://mob > ~/p/s/logs/curl; cat_files ~/p/s/logs/* | less"
 alias l="cd ~/p/s/logs; cat_files * | less"
 alias rmlogs="rm -rf /home/chasm/p/s/logs/*"
+alias www="echo 'as root'; su - www-data"
+alias up='check_site_up mob.swoopme.com "login"; check_site_up www.savenow.at "home of SaveNow.at"; check_site_up swoopme.com "<title>Swoop Mobile"'
 # Annoyingly, bash aliases take no parameters and need functions
-

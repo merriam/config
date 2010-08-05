@@ -113,5 +113,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 ## Virtual env
-#export WORKON_HOME=$HOME/.virtualenvs
-#source /usr/local/bin/virtualenvwrapper.sh
+if [ -d ~/.virtualenvs ]; then
+   export WORKON_HOME=$HOME/.virtualenvs
+    . /usr/local/bin/virtualenvwrapper.sh
+fi
+

@@ -3,7 +3,7 @@ alias virc="vi_and_source ~/.bashrc"
 alias visite="vi_and_source ~/.bash_site"
 alias g="cd /home/chasm/p/s;source go"
 alias go='gnome-open'
-alias rmpyc="ff *.pyc | xargs rm"
+alias rmpyc='find -name "*.pyc" | xargs rm'
 
 
 # Annoyingly, bash aliases take no parameters and need functions

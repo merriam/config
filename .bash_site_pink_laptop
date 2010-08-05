@@ -1,11 +1,14 @@
 alias p="cd /home/chasm/p/s/puppet/manifests"
-alias s="cd /home/chasm/p/s/swoopme"
+alias sm="cd /home/chasm/p/s/swoopme"
+alias s="cd /home/chasm/p/s/swoop"
 alias via="vi /home/chasm/p/s/puppet/manifests/apache2.conf; apache2ctl -t"
 alias g="cd /home/chasm/p/s;source go"
-alias x="echo 'as root';cd /home/chasm/p/s/;source go;killall -q apache2; sleep 1; ps -elf | grep apache | grep -v grep; cd ~/p/s/logs; rm -f ~/p/s/logs/*; apache2ctl -X"
+alias x="echo 'as root'; source /home/chasm/p/s/go; apache2ctl stop; sleep 1; psa ; rmlog ; (apache2ctl -X &) ; sleep 1; up > /home/chasm/p/s/logs/up ; l"
 alias tmob="curl http://mob > ~/p/s/logs/curl; cat_files ~/p/s/logs/* | less"
-alias l="cd ~/p/s/logs; cat_files * | less"
-alias rmlogs="rm -rf /home/chasm/p/s/logs/*"
+alias l="cat_files /var/log/apache2/*.log /p/s/logs/* | less"
+alias rmlog="rm -rf /var/log/apache2/access.log /var/log/apache2/error.log /home/chasm/p/s/logs/*"
 alias www="echo 'as root'; su - www-data"
-alias up='check_site_up mob.swoopme.com "login"; check_site_up www.savenow.at "home of SaveNow.at"; check_site_up swoopme.com "<title>Swoop Mobile"'
+alias up='check_site_up mob pinax; check_site_up mob.swoopme.com "login"; check_site_up www.savenow.at "home of SaveNow.at"; check_site_up swoopme.com "<title>Swoop Mobile"'
+alias psa="ps -elf | grep apache | grep -v grep"
+alias kickup='ssh swoop "cd /srv/www/mob.swoopme.com/swoopme; git pull; apache2ctl restart"'
 # Annoyingly, bash aliases take no parameters and need functions

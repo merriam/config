@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-##############
+####################################################
 # HISTORY
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -14,26 +14,25 @@ HISTCONTROL=ignoredups:ignorespace
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# Add to history each time command prompt is shown.  
+# Write to history file each time command prompt is shown.  
 PROMPT_COMMAND='history -a'
 
 # Keep multiline history together
 shopt -s cmdhist
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=5000
-HISTFILESIZE=10000
+HISTSIZE=500000
+HISTFILESIZE=10000000
 
 # Some handy history aliases
-alias h='history 15'
+alias h='history 20'
 alias hh='history | grep -i $*'
-alias hr='history -c; history -r'
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# make less more friendly for non-text input files, see lesspipe(1)
+# make the less command more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
@@ -46,9 +45,7 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
+# Choose colored prompt.
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
@@ -96,6 +93,18 @@ fi
 #  Put many aliases and functions in one spot
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+# Put in my site specific aliases and shortcuts
+#  These are not usually put into source control.
+if [ -f ~/.bash_site ]; then
+    . ~/.bash_site
+fi
+
+# Put in my site specific aliases and shortcuts
+#  These are not usually put into source control.
+if [ -f ~/.bash_project ]; then
+    . ~/.bash_project
 fi
 
 # Put in my site specific aliases and shortcuts
